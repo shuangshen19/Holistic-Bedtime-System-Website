@@ -1,47 +1,23 @@
 ---
+id: intro
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Introduction
 
-Let's discover **Docusaurus in less than 5 minutes**.
+## Narrative:
+Our Hack is a design and prototype of an Automatic Bedtime Audio Playback System, which implicitly senses when a user goes to bed and responds by automatically playing their preferred audio to improve their sleep environment. The system hooks into Spotify to play music, podcasts, white noise, etc to users when they go to bed, but could additionally connect to smart home features like lamps or thermostats to turn off the lights and cool down the room during bedtime. When a user lays on their bed, we detect their presence with the ultrasonic rangefinder and pressure detector. Later on, we could incorporate the photoresistor and thermometer for sensing the room state.
 
-## Getting Started
+## Abstractions:
+### Simple:
+When the user interacts with their bed, adjust the context of the room to support them falling asleep or waking by playing different audio tracks and adjusting the thermostat.
 
-Get started by **creating a new site**.
+### Complex:
+When bed occupancy changes from unoccupied to occupied (i.e. laying down), captured by an ultrasonic rangefinder, pressure detector, and/or other sensors, send a playback request to Spotify and other potential webhooks through IFTTT. Depending on the state of the room, captured by photoresistor and thermometer, optionally control the lights and temperature.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
 
-### What you'll need
+## Model:
+<img style={{width: '80%'}} src={require("./img/model.png").default} />
 
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+## Prototype:
+<img style={{width: '80%'}} src={require("./img/prototype.png").default} />
